@@ -1,0 +1,30 @@
+<h3 class="user-gg">Welcome, {{ activeUser.getFullName() }}!</h3>
+<div *ngIf="questionnaireForm">
+  <form action="" [formGroup]="questionnaireForm" (ngSubmit)="onSubmit()">
+    <div formArrayName="questions">
+      <div class="list-group mb-2 row" *ngFor="let questionCtrl of questionnaireForm.get('questions').controls; let i = index"
+        [formGroupName]="i">
+        <p class="list-group-item list-group-item-action disabled col-5 mx-auto">
+          {{ questions[i].questionText }}
+        </p>
+        <textarea *ngIf="questions[i].answerType == 0" class="col-5 mx-auto" formControlName="answer" rows="5" required ngModel placeholder="Answer here..."></textarea>
+        <div *ngIf="questions[i].answerType == 1" class="col-5 mx-auto list-group-item">
+          <div *ngFor="let choice of questions[i].choices" class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" value="{{ choice }}" formControlName="answer">
+            <label class="form-check-label" for="inlineRadio2"> {{ choice }} </label>
+          </div>
+        </div>
+        <div *ngIf="questions[i].answerType == 2" class="col-5 mx-auto list-group-item" formArrayName="answers">
+          <div *ngFor="let choiceCtrl of questionCtrl.get('answers').controls; let j = index" class="form-check form-check-inline"
+          [formGroupName]="j">
+            <input class="form-check-input" type="checkbox" value="{{ choiceCtrl.get('answerText').value }}" formControlName="answerText">
+            <label class="form-check-label" for="inlineCheckbox2"> {{ questions[i].choices[j] }} </label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-5 mx-auto pl-0">
+      <button type="submit" class="btn btn-danger ml-0">Submit Your Answers</button>
+    </div>
+  </form>
+</div>

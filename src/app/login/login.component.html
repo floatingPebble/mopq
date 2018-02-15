@@ -1,0 +1,21 @@
+<section class="margin-gg" id="cover">
+    <div id="cover-caption">
+        <div id="container" class="container">
+            <div class="row text-grey bg-light py-5">
+                <div class="col-sm-6 offset-sm-3 text-center">
+                    <h3 class="display-4">Please login!</h3>
+                    <div class="info-form">
+                        <form class="justify-content-center" (ngSubmit)="onSubmit(f)" #f="ngForm">
+                            <div class="form-group">
+                                <label class="sr-only">Email</label>
+                                <input type="email" class="form-control" name="email" id="email" email ngModel required placeholder="Email">
+                            </div>
+                            <button type="submit" class="btn btn-danger">Login</button>
+                        </form>
+                    </div>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+  </section>

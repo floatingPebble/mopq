@@ -1,0 +1,32 @@
+.divider-gg {
+  font-size: 3vw;
+  color: darkgray;
+  margin: 0 1vw;
+}
+
+label{
+  color: grey;
+}
+
+input {
+  width: 80%;
+}
+
+.btn-plus-gg {
+  width: 10%;
+  margin-left: 0.5vw;
+  font-size: 1.2vw;
+}
+
+textarea {
+  width: 91%;
+}
+
+select {
+  width: 91%;
+}
+
+.btn-width-gg{
+  width:40%; 
+  margin: 0 1.5vw 2vw 1.5vw;
+}

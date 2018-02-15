@@ -1,0 +1,32 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-danger navbar-mb-gg">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/">Main</a>
+      </li>
+      <li class="nav-item">
+          <a *ngIf="user.firstName" class="nav-link" routerLink="/questionnaire-list">Questionnaire</a>
+        </li>
+      <li class="nav-item">
+        <a *ngIf="!user.firstName" class="nav-link" routerLink="/register">Register</a>
+      </li>
+      <li class="nav-item">
+        <a *ngIf="!user.firstName" class="nav-link" routerLink="/login">Login</a>
+      </li>
+      <li class="nav-item">
+        <a *ngIf="user.firstName" class="nav-link logout-gg" (click)="onLogout()">Logout</a>
+      </li>
+      <li class="nav-item">
+        <a *ngIf="user.isAdmin" class="nav-link" routerLink="/admin">CRUD(admin)</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/about">About</a>
+      </li>
+    </ul>
+  </div>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+</nav>
+<router-outlet></router-outlet>

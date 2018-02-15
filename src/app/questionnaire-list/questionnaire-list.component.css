@@ -1,0 +1,14 @@
+.user-gg {
+  text-align: center;
+  color: #DC3545;
+
+}
+
+.hover-color-gg:hover {
+  background-color: #F8F9FA;
+}
+
+.grey-color-gg {
+  background-color: darkgray;
+  pointer-events: none;
+}

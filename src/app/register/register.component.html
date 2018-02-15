@@ -1,0 +1,29 @@
+<section class="margin-gg" id="cover">
+  <div id="cover-caption">
+      <div id="container" class="container">
+          <div class="row text-grey bg-light py-5">
+              <div class="col-sm-6 offset-sm-3 text-center">
+                  <h3 class="display-4">Please register!</h3>
+                  <div class="info-form">
+                      <form class="justify-content-center" (ngSubmit)="onSubmit(f)" #f="ngForm">
+                          <div class="form-group">
+                              <label class="sr-only">First Name</label>
+                              <input type="text" class="form-control" name="firstName" id="firstName" ngModel required placeholder="First Name">
+                          </div>
+                          <div class="form-group">
+                            <label class="sr-only">Last Name</label>
+                            <input type="text" class="form-control" name="lastName" id="lastName" ngModel required placeholder="Last Name">
+                        </div>
+                          <div class="form-group">
+                              <label class="sr-only">Email</label>
+                              <input type="email" class="form-control" name="email" id="email" email ngModel required placeholder="Email">
+                          </div>
+                          <button type="submit" class="btn btn-danger ">Register</button>
+                      </form>
+                  </div>
+                  <br>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>

@@ -1,0 +1,16 @@
+.white-gg {
+  color: white;
+  font-family: Impact, Charcoal, sans-serif;
+}
+.gold-gg {
+  color: goldenrod;
+  font-family: Impact, Charcoal, sans-serif;
+  
+}
+.navbar-mb-gg {
+  margin-bottom: 2vw;
+}
+
+.logout-gg:hover {
+  cursor: pointer;
+}

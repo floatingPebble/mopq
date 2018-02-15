@@ -1,0 +1,8 @@
+<h3 class="user-gg">Welcome, {{ activeUser.getFullName() }}!</h3><br>
+<div class="list-group mb-2 row" *ngFor="let questionnaire of questionnaires">
+  <a class="list-group-item list-group-item-action disabled col-5 mx-auto" [ngClass]="{'hover-color-gg': !questionnaire.isCompleted, 'grey-color-gg': questionnaire.isCompleted}"
+    [routerLink]="['/questionnaire', questionnaire.id]">
+    {{ questionnaire.name }}
+    <span *ngIf="questionnaire.isCompleted" style="font-weight:bold"> - Questionnaire Completed!</span>
+  </a>
+</div>
