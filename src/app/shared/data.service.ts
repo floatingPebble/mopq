@@ -47,8 +47,9 @@ export class DataService {
       }
     )
   }
-  getQuestionnaires(): Observable<Questionnaire[]> {
-    return this.httpClient.get<Questionnaire[]>(this.domain + 'questionnaires/list/' + this.activeUser.id);
+  getQuestionnaires(userId?): Observable<Questionnaire[]> {
+    userId = userId || this.activeUser.id;
+    return this.httpClient.get<Questionnaire[]>(this.domain + 'questionnaires/list/' + userId);
   }
   getQuestions(questionnaireId: number): Observable<Question[]> {
     return this.httpClient.get<Question[]>(this.domain + 'questionnaires/questionnaire/' + questionnaireId);
@@ -62,5 +63,15 @@ export class DataService {
   }
   addQuestionnaire(questionnaire: Questionnaire) {
     return this.httpClient.put(this.domain + 'questionnaires/add', questionnaire);
+  }
+  getAllUsers(): Observable<User[]> {
+    return this.httpClient.get<User[]>(this.domain + 'users/userlist');
+  }
+  getQuestionsWithAnswers(questionnaireId: number, userId: number): Observable<Question[]> {
+    const request = {
+      questionnaireId: questionnaireId,
+      userId: userId
+    }
+    return this.httpClient.post<Question[]>(this.domain + 'questionnaires/answers/', request);
   }
 }

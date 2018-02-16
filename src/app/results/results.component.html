@@ -1,0 +1,31 @@
+<div class="text-grey bg-light mb-2 row col-sm-6 offset-sm-3 text-center justify-content-center">
+  <select class="form-control row justify-content-center my-4" type="button" (change)="getUserQuestionnaires($event.target.value)">
+    <option [value]="user.id" *ngFor="let user of users"> {{ user.firstName +' '+ user.lastName }} </option>
+  </select>
+</div>
+<div class="text-grey bg-light mb-2 row col-sm-6 offset-sm-3 text-center justify-content-center">
+  <div class="form-control row justify-content-center my-4 bg-light border-light" *ngFor="let userQuestionnaire of userQuestionnaires">
+    <a class="list-group-item list-group-item-action disabled col-5 mx-auto" ngClass="hover-color-gg  questionnaire-name-font" type="button" data-toggle="collapse" data-target="#collapseExample2"
+    aria-expanded="false" aria-controls="collapseExample2" (click)="getQuestionsWithAnswers(userQuestionnaire.id)">
+      {{ userQuestionnaire.name }}
+    </a>
+  </div>
+</div>
+<div class="text-grey bg-light mb-2 row col-sm-6 offset-sm-3 text-center justify-content-center">
+  <div class="form-control row justify-content-center my-4 bg-light border-light" *ngFor="let question of questions; let i = index">
+    <p class="list-group-item list-group-item-action disabled col-5 mx-auto">
+      {{ question.questionText }}
+      <br/>
+      {{ question.answer }}
+      <br/>
+      {{ question.answers.join(", ") }}
+    </p>
+  </div>
+</div>
+
+  <!--   <div class="collapse" id]="collapseExample">
+    <div class="card card-body">
+      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+    </div>
+  </div>
+</div> -->

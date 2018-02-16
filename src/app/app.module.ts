@@ -17,6 +17,7 @@ import { DataService } from './shared/data.service';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthGuard } from './shared/auth-guard.service';
 import { AboutComponent } from './about/about.component';
+import { ResultsComponent } from './results/results.component';
 
 const appRoutes: Routes = [
   {path: '', component: MainComponent},
@@ -25,7 +26,8 @@ const appRoutes: Routes = [
   {path: 'questionnaire-list', component: QuestionnaireListComponent},
   {path: 'questionnaire/:id', component: QuestionnaireComponent},
   {path: 'admin', component: AdminComponent, canActivate: [AuthGuard]},
-  {path: 'about', component: AboutComponent}
+  {path: 'about', component: AboutComponent},
+  {path: 'results', component: ResultsComponent}
 ];
 
 
@@ -39,7 +41,8 @@ const appRoutes: Routes = [
     QuestionnaireComponent,
     QuestionComponent,
     MainComponent,
-    AboutComponent
+    AboutComponent,
+    ResultsComponent
   ],
   imports: [
     BrowserModule,

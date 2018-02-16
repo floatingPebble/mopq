@@ -1,0 +1,9 @@
+.hover-color-gg:hover {
+  background-color: #F8F9FA;
+  cursor: pointer;
+}
+
+.questionnaire-name-font {
+  font-weight: bold;
+  color: #E9ECEF;
+}

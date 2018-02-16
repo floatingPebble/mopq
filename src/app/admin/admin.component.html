@@ -1,21 +1,14 @@
 <br>
 <div class="text-center bg-light pb-4">
   <button type="button" class="btn btn-success">New Questionnaire</button>
-  <button type="button" class="btn btn-info">Edit Questionnaire</button>
-  <button type="button" class="btn btn-danger">Delete Questionnaire</button>
-  <span class="divider-gg">|</span>
-  <button type="button" class="btn btn-success">New Question</button>
-  <button type="button" class="btn btn-info">Update Question</button>
-  <button type="button" class="btn btn-danger">Delete Question</button>
+  <button type="button" class="btn btn-info">Edit Questionnaire(To do)</button>
+  <button type="button" class="btn btn-danger">Delete Questionnaire(To do)</button>
+  <button type="button" class="btn btn-success">New Question(To do)</button>
+  <button type="button" class="btn btn-info">Update Question(To do)</button>
+  <button type="button" class="btn btn-danger">Delete Question(To do)</button>
 </div>
 <br>
 
-
-<!-- QuestionnaireName: text,
-     form grupe, niz, lista:
-    [question 
-    answer type]
-    + -->
 
 <form [formGroup]="questionnaireForm" (ngSubmit)="onSubmit()">
   <div class="text-grey bg-light list-group mb-2 row col-sm-6 offset-sm-3 text-center">
@@ -35,15 +28,15 @@
           <option value="1">Single Choice</option>
           <option value="2">Multiple Choice</option>
         </select>
-        <div formArrayName="choices" *ngIf="questionCtrl.get('answerType').value != 0">
-          <div *ngFor="let choiceControl of questionCtrl.get('choices').controls; let j = index" [formGroupName]="j">
-            <input type="text" formControlName="choiceText" class="form-control" placeholder="Enter choice"> {{ choiceControl.get("choiceText").value }}
+        <div formArrayName="choices" class="row justify-content-left max-div-gg offset-sm-3" *ngIf="questionCtrl.get('answerType').value != 0">
+          <div *ngFor="let choiceControl of questionCtrl.get('choices').controls; let j = index" [formGroupName]="j" class="col-sm-6 mx-1 mt-2">
+            <input type="text" formControlName="choiceText" class="form-control max-div-gg" placeholder="Enter choice">
           </div>
           <button type="button" class="btn btn-danger btn-plus-gg" (click)="plusChoice(questionCtrl)">+</button>
         </div>
 
       </div>
     </div>
-    <button type="submit" class="btn btn-danger btn-width-gg">Submit Your Answers</button>
+    <button type="submit" class="btn btn-danger btn-width-gg mt-5">Submit Your Answers</button>
   </div>
 </form>
