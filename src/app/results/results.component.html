@@ -16,9 +16,9 @@
     <p class="list-group-item list-group-item-action disabled col-5 mx-auto">
       {{ question.questionText }}
       <br/>
-      {{ question.answer }}
+      <span *ngIf="question.answerType != 2" class="answer-bg-gg">{{ question.answer }}</span>
       <br/>
-      {{ question.answers.join(", ") }}
+      <span *ngIf="question.answerType == 2" class="answer-bg-gg">{{ question.answers.join(", ") }}</span>
     </p>
   </div>
 </div>
