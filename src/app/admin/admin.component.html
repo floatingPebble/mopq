@@ -21,7 +21,7 @@
     <div formArrayName="questions">
       <div class="row justify-content-center" *ngFor="let questionCtrl of questionnaireForm.get('questions').controls; let i = index"
         [formGroupName]="i">
-        <textarea type="text" formControlName="question" class="form-control" rows="3" placeholder="Question Text"></textarea>
+        <textarea type="text" formControlName="question" class="form-control mt-2" rows="3" placeholder="Question Text"></textarea>
         <br>
         <select class="form-control row justify-content-center my-4" formControlName="answerType">
           <option value="0">Text</option>
@@ -37,6 +37,6 @@
 
       </div>
     </div>
-    <button type="submit" class="btn btn-danger btn-width-gg mt-5">Submit Your Answers</button>
+    <button type="submit" class="btn btn-danger btn-width-gg mt-5">Save New Questionnaire</button>
   </div>
 </form>
